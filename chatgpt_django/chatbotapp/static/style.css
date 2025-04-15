@@ -16,50 +16,81 @@ h3{
 	text-align:center;
 
 }
-#chatbox{
-	margin: 5% auto 20px auto;
+#chatbox {
+    margin: 5% auto 20px auto;
     width: 80%;
     max-width: 600px;
-    background-color: #1c1c1c;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
     border-radius: 15px;
-    padding: 20px;
+    padding: 20px 25px;
     height: 400px;
     overflow-y: auto;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #userInput{
-    height:30px;
+    height:10px;
+	position: relative;
+	left: 500px;
     color:black;
-	margin-left:auto;
-	margin-right:auto;
 	width:40%;
-	margin-top:60px;
-
 }
-#textInput{
-	width:70%;
-	height:30px;
-	border:none;
-	border-bottom:3px solid green;
-	font-family:monospace;
-	font-size:17px;
+#textInput {
+    width: 70%;
+    height: 50px;
+    padding: 10px 20px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    border-bottom: 4px solid #28a745; 
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
 }
 
-#buttonInput{
-	padding:7px;
-	background-color:pink;
-	color:black;
-	border-radius:4px;
-	width:20%;
-	font-family:monospace;
-	font-size:17px;
-	margin-bottom: 20px;
+#textInput:focus {
+    outline: none;
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.4);
+    background-color: white;
+}
+
+#buttonInput {
+    padding: 12px 30px;
+    background: linear-gradient(45deg, #ff5f6d, #ffc3a0); 
+    color: black;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+	font-weight: 900;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 22%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Hover */
+#buttonInput:hover {
+    background: linear-gradient(45deg, #ff4b6e, #ffb8b8); 
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); 
+}
+
+#buttonInput:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .userText{
 	color:white;
-	font-family:monospace;
-	font-size:17px;
+	font-family:'Courier New', Courier, monospace;
+	font-size:18px;
 	text-align:right;
 	line-height:30px;
 }
@@ -67,12 +98,12 @@ h3{
 .userText span{
 	background-color:#009688;
 	padding:10px;
-	border-radius: 2px;
+	border-radius: 15px;
 
 }
 .botText{
 	color:white;
-	font-family:monospace;
+	font-family:'Courier New', Courier, monospace;
 	font-size:17px;
 	text-align:left;
 	line-height:30px;
@@ -80,7 +111,7 @@ h3{
 .botText span{
 	background-color:darkblue;
 	padding:10px;
-	border-radius: 2px;
+	border-radius: 15px;
 
 }
 
