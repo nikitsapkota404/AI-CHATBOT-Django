@@ -29,48 +29,39 @@
   </script>
 
   <style>
-    .button {
-      background-color: orange;
-      border: none;
-      color: white;
-      padding: 10px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      cursor: pointer;
-      border-radius: 12px;
+    .nav-item {
+      margin: 0 10px;
     }
-
-    .button2 {
-      background-color: red;
-      border: none;
-      color: white;
-      padding: 10px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      cursor: pointer;
-      border-radius: 12px;
+    
+    .nav-item .nav-link {
+      background: linear-gradient(135deg, #FFA500, #FF6347); /* orange to tomato */
+      color: white !important;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-
-    th {
-      background-color: #20305E;
-      color: white;
+    
+    .nav-item .nav-link:hover {
+      background: linear-gradient(135deg, #FF6347, #FFA500); /* reverse gradient */
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+      text-decoration: none;
     }
   </style>
 </head>
 
 <body style="background-image: url('/static/images/robot.jpg'); background-repeat: no-repeat; background-size: cover;">
 
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black; margin: 0; padding: 0;">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2C3E50; margin: 0; padding: 0;">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <span style="font-size:40px; color:green; font-family:cursive;">CHAT</span>
-        <span style="font-size:20px; color:white;">BOT</span>
+        <span style="font-size:40px; color:lightgreen; font-family: Cursive;">CHATBOT</span>
+        <span style="font-size:20px; color:red; font-family: Cursive;">NIKIT</span>
       </a>
 
       <ul class="navbar-nav">
@@ -86,7 +77,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'contact' %}">
-            <span class="glyphicon glyphicon-phone" style="padding:4px;"></span> Contact Us
+            <span class="glyphicon glyphicon-phone" style="padding:4px;"></span> Contact
           </a>
         </li>
         
