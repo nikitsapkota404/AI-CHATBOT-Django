@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat Bot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+  <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $('#table_id').DataTable();
+    });
+  </script>
+
+  <style>
+    .button {
+      background-color: orange;
+      border: none;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 12px;
+    }
+
+    .button2 {
+      background-color: red;
+      border: none;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 12px;
+    }
+
+    th {
+      background-color: #20305E;
+      color: white;
+    }
+  </style>
+</head>
+
+<body style="background-image: url('/static/images/robot.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black; margin: 0; padding: 0;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <span style="font-size:40px; color:green; font-family:cursive;">CHAT</span>
+        <span style="font-size:20px; color:white;">BOT</span>
+      </a>
+
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'chatbot' %}">
+            <span class="glyphicon glyphicon-home" style="padding:4px;"></span> Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">
+            <span class="glyphicon glyphicon-book" style="padding:4px;"></span> About
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact' %}">
+            <span class="glyphicon glyphicon-phone" style="padding:4px;"></span> Contact Us
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Dynamic content here -->
+  {% block body %}{% endblock %}
+
+</body>
+</html>

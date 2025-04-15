@@ -1,0 +1,49 @@
+{% extends 'navigation.html' %}
+{% block body %}
+<div>
+    <div id="chatbox" style="max-height: 500px; overflow-y: auto;">
+        <p class="botText"><span>Hi! I'm Chatbot made by Nikit.</span></p>
+    </div>
+
+    <div id="userInput">
+        <input id="textInput" type="text" name="msg" placeholder="Message" />
+        <input id="buttonInput" type="submit" value="Send" />
+    </div>
+
+    <!-- Spinner -->
+    <!-- <div id="loading" style="display:none;">
+        <p class="botText"><span>...</span></p>
+    </div> -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function getBotResponse() {
+            var rawText = $("#textInput").val();
+            if (rawText.trim() === "") return;
+
+            var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+            $("#textInput").val(""); 
+            $("#chatbox").append(userHtml);
+            document.getElementById('userInput').scrollIntoView({ block: 'start', behavior: 'smooth' });
+
+            $("#loading").show();
+            $.get("/get_response/", { msg: rawText }).done(function(data) {
+                const botHtml = '<p class="botText"><span>' + data.reply + '</span></p>';
+                $("#chatbox").append(botHtml);
+                $("#loading").hide();
+
+                document.getElementById('chatbox').scrollTop = document.getElementById('chatbox').scrollHeight;
+            });
+        }
+        $("#textInput").keypress(function(e) {
+            if (e.which == 13) {
+                getBotResponse();
+            }
+        });
+
+        $("#buttonInput").click(function() {
+            getBotResponse();
+        });
+    </script>
+</div>
+{% endblock %}
