@@ -76,7 +76,6 @@ h3{
     text-align: center;
 }
 
-/* Hover */
 #buttonInput:hover {
     background: linear-gradient(45deg, #ff4b6e, #ffb8b8); 
     transform: scale(1.05);
